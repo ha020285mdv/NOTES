@@ -1,0 +1,197 @@
+==============================================================
+
+Ctrl+E - end
+Ctrl+A - start
+Alt+F  - forward(words)  (Ctrl->)
+Alt+B  - back(words)     (Ctrl-<)
+Ctrl+F - forward(letters)
+Ctrl+B - back(letters)
+
+Ctrl+K - cut line
+Ctrl+Y - paste
+
+Ctrl+U - delete from seek to start
+Ctrl+D - delete symbol >
+Ctrl+H - delete symbol <
+Alt+A  - delete word
+
+Ctrl+Shift+- - отменить
+   #Ctrl+Shift++ - отменить
+
+Alt+U - upper
+Alt+C - capitalize
+Alt+L - lower
+
+Alt+T  - change places of 2 last words
+Ctrl+T - change places of 2 last letters
+
+==============================================================
+
+ls         - list
+   -l      - in table format
+   -m      - in comma separated format 
+   -R      - list recursive
+   -R cat  - list recursive in folder 'cat'
+   -a      - show hidden files 
+   -F      - types of files
+   -r      - reverse sort
+   -t      - sort by date
+   -S      - sort by size    
+
+============================================================== 
+
+pwd        - print working directory
+cd         - change directory
+touch      - new file/new date
+mkdir -p   - new folder with subfolders 
+
+cp         - copy
+   -i      - copy with interactive
+   -R      - copy from folder to folder
+mv         - moving or rename
+
+rm         - remove
+rm    -r   - remove directory	
+      -R   - recursive
+      -f   - force
+      
+
+echo "Hello world" >source.file
+cat <file>                       - view filedata 
+
+ln -s sourcefile softlinkfile    - soft link
+ln sourcefile softlinkfile       - hard link
+
+
+
+============================================================== 
+su -l user                   - switch user
+sudo passwd root             - change pass for root
+adduser name                 - new user
+deluser name -remove home    -  delete 
+============================================================== 
+info <command>   - info
+man <command>    - manual
+   navigation    - f-forward
+                    b-back
+                    Ctrl-N - 1 line down
+                    Ctrl-P - 1 line top
+                    /chars - search
+man -k chars     - find commands in doc  =apropos
+man -f command   - title of command      =whatis
+whereis command  - place of command
+==============================================================
+;             - 1 by 1
+&&            - 2 after success 1
+||            - 2 after fail 1
+com2 $(com1)  - using rezalts of 1st comm in 2st comm
+
+stdin, stdout, stderr
+| - channel (ex:  | less)
+>  - direction  = tee
+>> - direction (no owerwriting)   = tee -a
+
+cat <some>  - out
+cat <some> <some2> - concatenate out
+cat <some> <some2> > <some3>
+cat -n  - numerated strings out        
+
+head <file>      - show first 10 strings
+head -n 5 <file> - show first n strings  
+tail <file>      - show last 10 strings
+tail -n 5 <file> - show last n strings             
+
+============================================================== 
+chgrp user <file> 
+chgrp user -R <dir> 
+id - show group info
+chown user:group file    - change owner for file
+chown -R user:group file - change owner for group
+
+0  ---              
+1  --x   (1)
+2  -w-   (2) 
+3  -wx
+4  r--   (4)
+5  r-x
+6  rw-
+7  rwx
+
+chmod 664 file           - change access (-R - for dirs)
+
+============================================================== 
+
+du -h <file>                     - amount of memory
+zip <new_file> <compressed_file> - compressig
+       -e                        - add psw
+unzip <file>                     - unzip
+       -l                        - show included files
+gzip <file>                      - archive + deleting files, no new filename
+       -r                        - for dirs  
+gunzip                           - unzip
+tar                              - tar=zip without compressing
+
+
+history
+!number    - repeat command
+
+============================================================== 
+
+locate        - find
+       -i     - no register
+       | less - pagination
+       -n 10  - 10 strings
+ updatedb     - force update
+ 
+ 
+ grep <word> <file> - find in file or files
+ grep <word> *      - find everywere
+     -R             - recursive
+     -w             - whole word
+      
+ ls | grep <word>   - adding commands
+ 
+ find 'string'      - find filesystem (not in index)
+      -name            
+      -user <user>  
+      -group <group>
+      -size
+        !           - negative
+============================================================== 
+ apt-get install ______
+ apt-get --purge remove _____
+ apt-get update && apt-get upgrade
+ 
+ sudo apt install ____
+ sudo apt remove ____
+ sudo apt update
+ sudo apt upgrade
+ 
+ sudo aptitude
+
+  
+============================================================== 
+Fg - foreground        
+1) launch process: processname
+2) stop it with the ‘ctrl +z’
+3) continue it with the ‘fg’ utility: fg processname
+
+
+top - show all proceses
+
+============================================================== 
+
+curl -O site.com/file     - downloading
+wget site.com/file        - downloading
+curl ifconfig.me          - show my IP
+ping -c 4 site.com        - check communication, 4 attempts
+tracepath                 - traces the network path to a destination
+traceroute                - the same
+mtr site.com              - ping + tracepath
+host site.com             - show IP adress
+host 208.43.115.82        - show domain name
+whois site.com            - website’s whois records
+ifplugstatus              - status of wire connection
+ifconfig                  - status of all currently active network interfaces
+netstat                   - show all socets
+netstat -s                - detailed statistics for all ports
